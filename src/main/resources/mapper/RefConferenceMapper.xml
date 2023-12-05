@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hbu.dao.RefConferenceMapper" >
+  <resultMap id="BaseResultMap" type="com.hbu.entity.RefConference" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="conference_room_id" property="conferenceRoomId" jdbcType="BIGINT" />
+    <result column="conference_room_appointment_id" property="conferenceRoomAppointmentId" jdbcType="INTEGER" />
+    <result column="date" property="date" jdbcType="VARCHAR" />
+    <result column="time" property="time" jdbcType="VARCHAR" />
+    <result column="starttime_code" property="starttimeCode" jdbcType="INTEGER" />
+    <result column="endtime_code" property="endtimeCode" jdbcType="INTEGER" />
+    <result column="isdel" property="isdel" jdbcType="BIT" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, conference_room_id, conference_room_appointment_id, date, time, starttime_code, 
+    endtime_code, isdel
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.hbu.entity.RefConferenceExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from ref_conference
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from ref_conference
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from ref_conference
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.hbu.entity.RefConferenceExample" >
+    delete from ref_conference
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.hbu.entity.RefConference" >
+    insert into ref_conference (id, conference_room_id, conference_room_appointment_id, 
+      date, time, starttime_code, 
+      endtime_code, isdel)
+    values (#{id,jdbcType=INTEGER}, #{conferenceRoomId,jdbcType=BIGINT}, #{conferenceRoomAppointmentId,jdbcType=INTEGER}, 
+      #{date,jdbcType=VARCHAR}, #{time,jdbcType=VARCHAR}, #{starttimeCode,jdbcType=INTEGER}, 
+      #{endtimeCode,jdbcType=INTEGER}, #{isdel,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.hbu.entity.RefConference" >
+    insert into ref_conference
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="conferenceRoomId != null" >
+        conference_room_id,
+      </if>
+      <if test="conferenceRoomAppointmentId != null" >
+        conference_room_appointment_id,
+      </if>
+      <if test="date != null" >
+        date,
+      </if>
+      <if test="time != null" >
+        time,
+      </if>
+      <if test="starttimeCode != null" >
+        starttime_code,
+      </if>
+      <if test="endtimeCode != null" >
+        endtime_code,
+      </if>
+      <if test="isdel != null" >
+        isdel,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="conferenceRoomId != null" >
+        #{conferenceRoomId,jdbcType=BIGINT},
+      </if>
+      <if test="conferenceRoomAppointmentId != null" >
+        #{conferenceRoomAppointmentId,jdbcType=INTEGER},
+      </if>
+      <if test="date != null" >
+        #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="time != null" >
+        #{time,jdbcType=VARCHAR},
+      </if>
+      <if test="starttimeCode != null" >
+        #{starttimeCode,jdbcType=INTEGER},
+      </if>
+      <if test="endtimeCode != null" >
+        #{endtimeCode,jdbcType=INTEGER},
+      </if>
+      <if test="isdel != null" >
+        #{isdel,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.hbu.entity.RefConferenceExample" resultType="java.lang.Integer" >
+    select count(*) from ref_conference
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update ref_conference
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.conferenceRoomId != null" >
+        conference_room_id = #{record.conferenceRoomId,jdbcType=BIGINT},
+      </if>
+      <if test="record.conferenceRoomAppointmentId != null" >
+        conference_room_appointment_id = #{record.conferenceRoomAppointmentId,jdbcType=INTEGER},
+      </if>
+      <if test="record.date != null" >
+        date = #{record.date,jdbcType=VARCHAR},
+      </if>
+      <if test="record.time != null" >
+        time = #{record.time,jdbcType=VARCHAR},
+      </if>
+      <if test="record.starttimeCode != null" >
+        starttime_code = #{record.starttimeCode,jdbcType=INTEGER},
+      </if>
+      <if test="record.endtimeCode != null" >
+        endtime_code = #{record.endtimeCode,jdbcType=INTEGER},
+      </if>
+      <if test="record.isdel != null" >
+        isdel = #{record.isdel,jdbcType=BIT},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update ref_conference
+    set id = #{record.id,jdbcType=INTEGER},
+      conference_room_id = #{record.conferenceRoomId,jdbcType=BIGINT},
+      conference_room_appointment_id = #{record.conferenceRoomAppointmentId,jdbcType=INTEGER},
+      date = #{record.date,jdbcType=VARCHAR},
+      time = #{record.time,jdbcType=VARCHAR},
+      starttime_code = #{record.starttimeCode,jdbcType=INTEGER},
+      endtime_code = #{record.endtimeCode,jdbcType=INTEGER},
+      isdel = #{record.isdel,jdbcType=BIT}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hbu.entity.RefConference" >
+    update ref_conference
+    <set >
+      <if test="conferenceRoomId != null" >
+        conference_room_id = #{conferenceRoomId,jdbcType=BIGINT},
+      </if>
+      <if test="conferenceRoomAppointmentId != null" >
+        conference_room_appointment_id = #{conferenceRoomAppointmentId,jdbcType=INTEGER},
+      </if>
+      <if test="date != null" >
+        date = #{date,jdbcType=VARCHAR},
+      </if>
+      <if test="time != null" >
+        time = #{time,jdbcType=VARCHAR},
+      </if>
+      <if test="starttimeCode != null" >
+        starttime_code = #{starttimeCode,jdbcType=INTEGER},
+      </if>
+      <if test="endtimeCode != null" >
+        endtime_code = #{endtimeCode,jdbcType=INTEGER},
+      </if>
+      <if test="isdel != null" >
+        isdel = #{isdel,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hbu.entity.RefConference" >
+    update ref_conference
+    set conference_room_id = #{conferenceRoomId,jdbcType=BIGINT},
+      conference_room_appointment_id = #{conferenceRoomAppointmentId,jdbcType=INTEGER},
+      date = #{date,jdbcType=VARCHAR},
+      time = #{time,jdbcType=VARCHAR},
+      starttime_code = #{starttimeCode,jdbcType=INTEGER},
+      endtime_code = #{endtimeCode,jdbcType=INTEGER},
+      isdel = #{isdel,jdbcType=BIT}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+    <!--lst-->
+    <select id="count"  resultType="java.lang.Integer" >
+ select count(*) from ref_conference where isdel=1;
+</select>
+
+    <select id="selectByDate"  resultMap="BaseResultMap" parameterType="java.lang.String">
+ select * from ref_conference  where date = #{date,jdbcType=VARCHAR} and  isdel=1;
+</select>
+  <select id="selectByDateRoomId"  resultMap="BaseResultMap" >
+ select * from ref_conference  where date = #{date,jdbcType=VARCHAR} and conference_room_id= #{conferenceRoomId,jdbcType=BIGINT}
+ and  isdel = 1
+</select>
+
+
+    <!--  <select id="usedRoomId" resultMap="BaseResultMap" parameterType="java.lang.String" >
+      select conference_room_id from ref_conference
+       where date = #{date,jdbcType=VARCHAR}
+       and time = #{time,jdbcType=VARCHAR}
+     </select> -->
+</mapper>

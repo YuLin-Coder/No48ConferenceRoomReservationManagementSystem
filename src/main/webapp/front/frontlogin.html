@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="zh-cmn">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" href="css/login.css"/>
+<link rel="stylesheet" href="css/layui.css"/>
+<title>系统登录</title>
+</head>
+<body>
+<div class="background"></div>
+<div class="main">
+	 <div class="header">
+        <div class="portal-logo" style="margin-left: 20px; font-size: 33px; color: #ffffff;">
+            从戎源码网
+        </div>
+		<div class="portal-title">
+        会议室预约系统
+        </div>
+    </div>
+	<div class="container">
+        <div class="notice-panel">
+            <div class="notice-box">
+                <div class="notice-title">
+                系统使用说明
+                </div>
+                <div class="notice-break-line"></div>
+                <div class="notice-content">
+                <p>1、会议室实行网上预约使用与管理。注意：最晚提前一天进行预约。</p>
+				<p>2、若使用QQ邮箱注册，用户可通过QQ邮箱绑定微信来接收消息。</p>
+				<p>3、会议室预约时段为：8:00-18：00，超时段使用应在预约登记时做好备注说明。(提示：预约时间必须落在系统划定时间段内，时间需按照系统原有时间格式输入）</p>
+                <p>4、建议使用电脑设备访问本系统。</p>
+                <p>5、如会议室多媒体设备使用前发生故障、损坏或配件丢失，要及时上报综合办公室，未及时上报发现后责任一律由最后使用人承担。</p>
+				<p>6、其他特殊情况或特殊需要用户可联系综合办公室。</p>
+                </div>
+            </div>
+        </div>
+        <div class="login-panel">
+            <div class="login-box">
+            
+                <div id="nav" class="login-nav only-auth">
+            
+                    <div class="on" data-type="local" id="local">账号登录</div>
+            
+                </div>
+                <form class="el-form el-form--label-top" onsubmit="return false">
+                    <!-- <input name="auth_type" type="hidden" value="local"/> -->
+                    <div class="wechat-qrcode" style="margin-top: 20px">
+                        
+                        <div id="wechat-qrcode"></div>
+                        
+                    </div>
+                
+                    <div class="login-form-item">
+                        <div class="el-input user-input">
+                            <input id="number" placeholder="职工号" type="text" >
+                        </div>
+                    </div>
+               
+                    <div class="login-form-item password-field">
+                        <div class="el-input password-input">
+                            <input id="pw" placeholder="密码" type="password" >
+                        </div>
+                    </div>
+					
+					<div class="login-form-item password-field">
+                        <div class="el-input code-input"> 
+                            <input autocomplete="new-password" placeholder="验证码" id="code_input" type="text1" name="code1">  
+                        </div>
+						<div class="el-input loginCode" id="v_container"></div>
+                    </div>
+					
+					 <div class="upper-login-field">
+          
+                        <div class="remember-field">
+                            <!-- <span><input type="checkbox" name="remember_cookie" style="vertical-align: middle;"></span>
+                            <span>下次自动登录</span> -->
+                        </div>
+                    
+                    </div>
+                   <!-- <button type="submit" id="my_button" onClick="submit1()" class="el-button-login" style="margin-bottom:20px;" > 
+                        <span>登录</span>
+                    </button> -->
+                    <button id="my_button" onClick="submit1()" class="el-button-login" style="margin-bottom:20px;" > 
+                        <span>登录</span>
+                    </button>
+					
+						<a href="forget.html">忘记密码</a>
+            			<a href="frontregister.html">立即注册</a>
+                </form>
+                <div class="link-field">
+                
+                
+                </div>
+                <div class="mobile-notice-panel">
+                    <div class="notice-box">
+                        <div class="notice-break-line"></div>
+                        <div class="notice-title">
+                        系统使用说明
+                        </div>
+                        <div class="notice-content">
+                         <p>1、会议室实行网上预约使用与管理。注意：必须提前一天进行预约。</p><p>2、若使用QQ邮箱注册，用户可通过QQ邮箱绑定微信来接收消息。</p><p>3、会议室预约时段为：8:00-18：00，超时段使用应在预约登记时做好备注说明。(提示：预约时间必须落在系统划定时间段内，时间需按照系统原有时间格式输入）</p>
+				<p>4、如会议室多媒体设备使用前发生故障、损坏或配件丢失，要及时上报综合办公室，未及
+      			时上报发现后责任一律由最后使用人承担。</p><p>5、其他特殊情况或特殊需要用户可联系综合办公室。</p>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+            </div>
+        </div>
+</div> 
+</body> 
+
+<script src="js/script/jquery-1.10.2.min.js"></script> 
+<script src="js/script/jquery-ui-1.9.2.custom.min.js"></script> 
+<script src="js/script/jquery-migrate-1.2.1.min.js"></script> 
+<script src="js/script/bootstrap.min.js"></script> 
+<script src="js/script/modernizr.min.js"></script> 
+<script src="js/script/jquery.nicescroll.js"></script> 
+
+ <!-- lst -->
+ <script type="text/javascript" src="js/utilcommon.js"></script>
+ <script src="js/layer-v3.1.1/layer/layer.js" ></script>
+ <script src="js/script/wer.js"></script>
+ <script>
+
+var verifyCode = new GVerify("v_container");
+function isnumber(){
+  num  = $("#number").val();
+    if( /^\d+$/.test(num) || num == ""){
+        numbers = num;
+       // console.log(numbers); 
+       return 0;
+    }else{
+        layer.msg('教职工号：请输入数字');
+    }
+}
+$("#number").on("input",function(){       
+   isnumber();
+});
+ 
+
+function submit1(){
+    var res = verifyCode.validate(document.getElementById("code_input").value);
+    if(res) {
+        var url = Config.host + "/front/userLogin"; 
+        //$("#num").val().length == 0
+        if( $("#number").val().length==0 ||  $("#pw").val().length==0){
+            alert("请输入教职工号和密码")
+        }else{
+            var number = $("#number").val();
+            var password = $("#pw").val();
+            var data = {number: number, password: password};
+            var func = function (returndata) {
+                console.log(returndata.data);
+                if (returndata.code == "999999") {
+                    alert("用户不存在");
+                } else if (returndata.code == "888888") {
+                    alert("密码不正确");
+                } else {
+                    location.href = "index.html";
+                    setCookie("token",returndata.data);
+                }
+            }
+            if(isnumber() == 0){
+                AJAX.get(url,data,func);
+            }
+        }    
+    }else{
+        alert("验证码错误");
+    }
+
+}
+</script>
+</html>

@@ -1,0 +1,289 @@
+body{
+	margin: 0;
+	padding: 0;
+	background: url("../images/hbu03.jpg");
+	background-size: cover;
+	font-family: sans-serif;	
+}
+.logo{
+	position: absolute;
+	top: -22%;
+	left: -142%;
+}
+.logo01{
+	position: absolute;
+	top: -2%;
+	left: -142%;
+}
+.form-control{
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	width: 275px;
+	color: #fff;
+	font-size: 16px;
+}
+.cd1{
+	color: #030303;
+}
+.loginBox
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 350px;
+	height: 420px;
+	padding: 20px 40px;
+	box-sizing: border-box;
+	background: rgba(0,0,0,.5);
+}
+.registerBox
+{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 365px;
+	height: 580px;
+	padding: 20px 40px;
+	box-sizing: border-box;
+	background: rgba(0,0,0,.5);
+}
+.loginCode
+{
+	position: absolute;
+	width: 130px;
+	height: 50px;
+	bottom: 120px;
+	right:37px;
+}
+.registerCode 
+{
+	position: absolute;
+	width: 130px;
+	height: 50px;
+	top: 72%;
+	right:37px;
+}
+.prompt1 
+{
+	position: absolute;
+	top: 20%;
+	left: 60%;
+	font-size: 3px;
+	color: red;
+}
+.prompt2 
+{
+	position: absolute;
+	top: 34%;
+	left: 70%;
+	font-size: 3px;
+	color: red;
+}
+.prompt3
+{
+	position: absolute;
+	top: 48%; 
+	left: 70%;
+	font-size: 3px;
+	color: red;
+}
+.prompt4
+{
+	position: absolute;
+	top: 62%;
+	left: 70%;
+	font-size: 3px;
+	color: red;
+}
+.prompt5
+{
+	position: absolute;
+	top: 77%;
+	left: 65%;
+	font-size: 3px;
+	color: red;
+}
+.prompt6
+{
+	position: absolute;
+	top: 68%;  
+	left: 65%;
+	font-size: 3px;
+	color: red;
+}
+.Code
+{
+	position: absolute;
+	top: 74%; 
+	left: 70%;
+	color: #FFFFFF; 
+}
+.Code1
+{ 
+	position: absolute;
+	top: 64%; 
+	left: 70%;
+	color: #FFFFFF; 
+}
+
+.prompt1 p
+{
+	position: absolute;
+	top: 66%;
+	font-size: 2px;
+	color: red;
+}
+.forget_prompt p
+{
+	position: absolute;
+	top: 52%;
+	font-size: 2px;
+	color: red;
+}
+.user
+{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	overflow: hidden;
+	position: absolute;
+	top: calc(-100px/2);
+	left: calc(50% - 50px);
+}
+h2
+{
+	margin: 0;
+	padding: 0 0 20px;
+	color: #efed40;
+	text-align: center;
+}
+.loginBox p
+{
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	color: #fff;
+	
+}
+.registerBox p
+{
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	color: #fff;
+	
+}
+.loginBox input
+{
+	width: 100%;
+	margin-bottom: 20px;	
+}
+.registerBox input
+{
+	width: 100%;
+	margin-bottom: 20px;	
+}
+.loginBox input[type="text1"]
+{
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color: #fff;
+	font-size: 16px;
+	
+}
+.loginBox input[type="text"],
+.loginBox input[type="password"]
+{
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color: #fff;
+	font-size: 16px;
+	
+}
+.registerBox input[type="text1"]
+{
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color: #fff;
+	font-size: 16px;
+	
+}
+.registerBox input[type="text"],
+.registerBox input[type="password"]
+{
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color: #fff;
+	font-size: 16px;
+	
+}
+::placeholder
+{
+	color: rgba(255,255,255,.5);
+}
+.loginBox input[type="submit"]
+{
+	border: none;
+	outline: none;
+	height: 40px;
+	color: #fff;
+	font-size: 16px;
+	background: #ff267e;
+	cursor: pointer;
+	border-radius: 20px;
+}
+.registerBox input[type="submit"]
+{
+	border: none;
+	outline: none;
+	height: 40px;
+	color: #fff;
+	font-size: 16px;
+	background: #ff267e;
+	cursor: pointer;
+	border-radius: 20px;
+}
+.loginBox input[type="submit"]:hover
+{
+	background: #efed40;
+	color: #262626;
+}
+.registerBox input[type="submit"]:hover
+{
+	background: #efed40;
+	color: #262626;
+}
+
+.loginBox a
+{
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: none;
+	padding: 0 0 0 50px;	
+}
+.registerBox a
+{
+	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: none;
+	padding: 0 0 0 50px;	
+}

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="ThemeBucket">
+<link rel="shortcut icon" href="#" type="image/png">
+<title>空闲会议室查询</title>
+
+<!--data table-->
+<link rel="stylesheet" href="js/data-tables/DT_bootstrap.css" />
+<link href="css/style.css" rel="stylesheet">
+<link href="css/style-responsive.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="js/jquery-multi-select/css/multi-select.css" />
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --> 
+<!--[if lt IE 9]>
+  <script src="js/html5shiv.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body class="sticky-header">
+<section>
+<!-- left side start-->
+<div class="left-side sticky-left-side"> 
+  
+  <!--logo and iconic logo start-->
+  <div class="logo">
+    <h3 style="color: white">&nbsp; &nbsp;管理学院MRBS</h3>
+  </div>
+  <div class="logo-icon text-center"> </div>
+  <!--logo and iconic logo end-->
+  
+  <div class="left-side-inner"> 
+    
+    <!--sidebar nav start-->
+    
+    <ul class="nav nav-pills nav-stacked custom-nav">
+      <br>
+      <li><a href="index.html"><i class="fa fa-home"></i> <span>首页</span></a></li>
+      <li><a href="message.html"><i class="fa fa-archive"></i> <span>我须留意</span></a></li>
+      <li><a href="search.html"><i class="fa fa-cogs"></i> <span>会议室查询</span></a> </li>
+      <!-- <li><a href="book.html"><i class="fa fa-file-text"></i> <span>我要预约</span></a> </li> -->
+      <li class="menu-list"><a href="book.html"><i class="fa fa-file-text"></i> <span>我要预约</span></a>
+        <ul class="sub-menu-list">
+            <li><a href="book.html">本系预约</a></li>
+            <li><a href="book2.html">跨系预约</a></li>
+        </ul>
+      </li>
+      <li><a href="conferenceall.html"><i class="fa fa-bullhorn"></i> <span>预约情况</span></a> </li>   
+      <li><a href="book_list.html"><i class="fa fa-bullhorn"></i> <span>我的预约</span></a> </li>     
+      <!-- <li><a href="book_list2.html"><i class="fa fa-align-justify"></i> <span>我的会议</span></a> </li> -->
+      <!-- <li><a href="current.html"><i class="fa fa-map-marker"></i> <span>当前会议</span></a> </li> -->
+  </ul>
+    <!--sidebar nav end--> 
+  </div>
+</div>
+<!-- left side end--> 
+
+<!-- main content start-->
+<div class="main-content" >
+
+<!-- header section start-->
+<div class="header-section"> 
+  <!--toggle button start--> 
+  <a class="toggle-btn"><i class="fa fa-bars"></i></a> 
+  <!--toggle button end--> 
+  
+  <!--notification menu start -->
+  <div class="menu-right">
+    <ul class="notification-menu">
+      <li> <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> <img src="images/user.png" alt="" /> 用户中心 <span class="caret"></span> </a>
+        <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
+          <!-- <li><a data-toggle="modal" href="##myModal1"><i class="fa fa-cog"></i>设置</a> </li> -->
+          <li><a onclick="frontQuit()"><i class="fa fa-sign-out"></i>退出登录</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <!--notification menu end --> 
+  
+</div>
+
+<!-- <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal1" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title">用户设置</h4>
+          </div>
+          <div class="modal-body">
+            <form role="form">
+			 <div class="form-group">
+              <p><label for="exampleInputEmail1">账号</label></p>
+              <input type="text" class="form-control" id="exampleInputEmail1">
+            </div> 
+			  <div class="form-group">
+              <label for="exampleInputPassword1">密码</label>
+              <input type="password" class="form-control" id="exampleInputPassword2">
+            </div>
+            <div class="form-group">
+              <p><label for="exampleInputEmail1">邮箱</label></p>
+              <input type="email" class="form-control" id="exampleInputEmail3">
+            </div>
+			     <div class="form-group">
+              <p><label for="exampleInputEmail1">系别</label></p>
+              <input type="text" class="form-control" id="exampleInputEmail4">
+            </div>
+          </form>
+          </div>
+          <div class="modal-footer">
+            <button data-dismiss="modal" class="btn btn-default" type="button">取消</button>
+            <button class="btn btn-primary" type="button">修改</button>
+          </div>
+        </div>
+      </div>
+    </div> --> 
+
+<!-- header section end--> 
+
+<!-- page heading start-->
+<div class="page-heading">
+  <h3> 会议室查询 </h3>
+  <div class="state-info">
+    <iframe name="weather_inc" src="http://i.tianqi.com/index.php?c=code&id=2&num=1" width="220" height="70" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+  </div>
+</div>
+<!-- page heading end--> 
+
+<!--body wrapper start-->
+<div class="wrapper">
+  <div class="row">
+    <div class="col-md-12">
+      <section class="panel">
+      <div class="panel-body">
+        <div class="form-group">
+          <div class="col-md-6 col-xs-11" style="width: 30%;">
+            <input class="form-control" id="test2" placeholder="请选择日期" type="text" style="width: 200px;"/>
+            <a class="btn btn-primary" style="position: absolute; margin-left: 200px; margin-top: -34px;" id="bt">开始查询</a> 
+            
+          </div>
+        </div>
+        <div class="panel-body" id="show1" style="display: none;">
+          <div class="adv-table editable-table ">
+            <div class="space15"></div>
+            <table class="table table-striped table-hover table-bordered" id="editable-sample">
+              <thead>
+                <tr>
+                  <th>会议ID</th>
+                  <th>会议室</th>
+                  <th>所属系别</th>
+                  <!-- <th>日期</th> -->
+                  <th>占用时间</th>
+                </tr>
+              </thead>
+              <tbody id="searchshow1">
+              </tbody>
+            </table>
+          </div>
+        </div>
+		</div>
+        </section>
+        <section class="panel">
+          <header class="panel-heading"> 空闲会议室查询结果 </header>
+          <div class="panel-body">
+            <div class="adv-table editable-table ">
+              <div class="space15"></div>
+              <table class="table table-striped table-hover table-bordered" id="editable-sample">
+                <thead>
+                  <tr>
+                    <th>会议室</th>
+                    <th>地址</th>
+                    <th>容量</th>
+                    <th>所属系别</th>
+                    <th>本系预约</th>
+                    <th>跨系预约</th>
+                    <th>备注</th>
+                  </tr>
+                </thead>
+                <tbody id="searchshow">
+                  <!--  <tr class="odd">
+		                      <td>301</td>
+		                      <td>30</td>
+		                      <td>信息管理工程系</td>
+		                      <td><a href="book.html"><span class="label label-success label-mini">我要预约</a></span></td>
+							  <td><a href="book2.html"><span class="label label-warning label-mini">我要预约</a></span></td>
+		                      <td> </td>
+                    	</tr>  -->
+                  
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <!--body wrapper end-->
+  <div id="demo4"></div>
+  <!--footer section start-->
+  <footer class="sticky-footer"> <a href="https://armycodes.com/" target=_blank>Copyright &copy; 从戎源码网 from 2023.</a> </footer>
+  <!--footer section end--> 
+  
+</div>
+<!-- main content end-->
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster --> 
+<script src="js/script/jquery-1.10.2.min.js"></script> 
+<script src="js/script/jquery-ui-1.9.2.custom.min.js"></script> 
+<script src="js/script/jquery-migrate-1.2.1.min.js"></script> 
+<script src="js/script/bootstrap.min.js"></script> 
+<script src="js/script/modernizr.min.js"></script> 
+<script src="js/script/jquery.nicescroll.js"></script> 
+
+<!-- lst --> 
+<script type="text/javascript" src="js/utilcommon.js"></script> 
+<script src="js/front/search.js"></script> 
+
+<!--common scripts for all pages--> 
+<script src="js/scripts.js"></script>
+<script src="js/laydate/laydate.js"></script> 
+            <script>
+        //执行一个laydate实例
+                                laydate.render({
+                                elem: '#test2' //指定元素
+                            });
+            </script> 
+</body>
+</html>

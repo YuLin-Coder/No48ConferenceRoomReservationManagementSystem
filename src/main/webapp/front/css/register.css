@@ -1,0 +1,539 @@
+html, body{
+    height: 100%;
+    font-family: 'Microsoft YaHei';
+}
+.background{
+    display:block;
+    position: fixed;
+    background: url("../images/hbu03.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    top:0px;
+    height:100%;
+    width: 100%;
+    z-index: -10;
+    overflow: hidden;
+}
+
+.main{
+    text-align:center;
+    height:100%;
+}
+.header{
+    padding-top: 70px;
+    text-align: left;
+    margin: 0 auto;
+    height: 48px;
+    width: 70%;
+    display: flex;
+}
+.portal-logo{
+    height:100%;
+}
+.portal-logo::after{
+    height: 90%;
+    display: inline-block;
+    vertical-align: middle;
+    content:"";
+    width:2px;
+    margin-left:20px;
+    background-color:white;
+}
+.portal-blank-logo{
+    height:100%;
+    width: 0px;
+}
+.portal-title{
+    margin-left:20px;
+    flex:1;
+    font-size: 33px;
+    color: #ffffff;
+}
+.no-logo {
+    margin-left:0 !important;
+}
+.container{
+    position: relative;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    height:100%;
+    max-height:420px;
+    display:flex;
+}
+.notice-panel{
+    flex: 5;
+    float:left;
+    height: 100%;
+	background: rgba(0,0,0,.5);
+    overflow: auto;
+    display:block;
+    border-radius:6px;
+}
+.mobile-notice-panel{
+    display:none;
+}
+.notice-break-line{
+    background-color:white;
+    width:100%;
+    margin-top:14px;
+    margin-bottom:20px;
+    height:2px;
+}
+.notice-box {
+    padding-top: 40px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.notice-title{
+    font-weight:bold;
+    font-size: 21px;
+    color:white;
+}
+.notice-content{
+    text-align:left;
+    text-indent:2em;
+    font-size: 16px;
+    color:white;
+    line-height: 2;
+}
+.notice-content img{
+    width: 100%;
+}
+.login-panel {
+	overflow: auto;
+    color:white;
+    margin-left:20px;
+    width: 350px;
+    height: 100%;
+    border-radius:6px;
+	background: rgba(0,0,0,.5);
+}
+.login-panel a {
+    color: white;
+	display: inline; 
+	margin: 30px;
+}
+
+.login-nav {
+    font-size: 16px;
+    display:flex;
+}
+.login-box{
+    padding-top: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.login-nav div{
+    flex:1;
+    height: 44px;
+    line-height: 44px;
+    cursor:pointer;
+    border-bottom: 1px solid white;
+}
+.login-nav div.on{
+    box-sizing: border-box;
+    border-bottom: 2px solid white;
+}
+.login-nav.only-auth div.on{
+    height: auto;
+    line-height: normal;
+    padding-bottom:14px;
+    font-weight:bold;
+    font-size: 21px;
+}
+
+.login-form-item {
+    height:40px;
+    margin-top:20px;
+}
+
+::placeholder {
+    color: white;
+    opacity: 1;
+}
+
+.el-input {
+    background-repeat:no-repeat;
+    background-position:left;
+    background-position-x: 15px;
+    background-size:19px 19px;
+    font-size: 14px;
+    width:100%;
+    height:42px;
+}
+
+/*输入框与选择框的嵌套*/
+.outer {
+   	
+}
+.inner {
+    
+
+}
+/*选择框样式定义*/
+.form-control{
+	position: relative;
+	margin-left: -1px; 
+	margin-top: -50px;
+	color: white;
+	border-radius: 6px; 
+	width: 100%;
+	height: 40px;
+	background: rgba(0,0,0,.2);
+}
+.user-input{
+    background-image:url("../images/user01.png");
+}
+.password-input{
+    background-image:url("../images/sq-password.png");
+}
+.code-input{
+	background-image:url("../images/code.png");
+	width: 60%;
+}
+.user-no{
+	background-image: url("../images/no.png"); 
+}
+.user-kind{
+	background-image: url("../images/kind.png");
+}
+.email-input{
+	background-image: url("../images/email.png");
+}
+.loginCode{
+/*	position: absolute;*/
+	width: 29%;  
+	height: 95%;
+	margin: -40px 190px ;
+}
+.footer{
+    width: 100%;
+    bottom: 5px;
+    font-size: 14px;
+    color: white;
+    position: absolute;
+}
+
+.link-field{
+    margin-top:0;
+    margin-left:auto;
+    display:flex;
+    font-size:14px;
+    color:white;
+    text-align:left;
+}
+.link-login{
+    flex: 1;
+    padding-left:5px;
+}
+.link-login img{
+    width: 22px;
+    margin-right:5px;
+}
+.upper-login-field{
+    margin-top:10px;
+    display:flex;
+}
+.remember-field{
+    margin-left: auto;
+    text-align: right;
+    font-size: 14px;
+    width: 120px;
+}
+.msg{
+    text-align:left;
+    color:#ff4505;
+    flex:1;
+    padding-left:5px;
+}
+
+.el-input input{
+    background:none;
+    text-indent:41px;
+    -webkit-appearance: none;
+    border-radius: 14px;
+    border: 1px solid white;
+    box-sizing: border-box;
+    color: white;
+    display: block;
+    font-size: inherit;
+    height: 42px;
+    line-height: 1;
+    outline: 0;
+    transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+    width: 100%;
+}
+.phone-code-input{
+    display:flex;
+}
+
+.code-input{
+    display:flex;
+}
+
+.captcha-div{
+    height:42px;
+    float:left;
+    line-height:1;
+    vertical-align:middle;
+    margin-left:17px;
+    width:100px;
+}
+.captcha{
+    background:white;
+    display:block;
+    height:40px;
+    width:100px;
+    border-radius:15px;
+}
+.captcha-img{
+    height:100%;
+    width:100%;
+}
+
+.el-button {
+    display: inline-block;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid #dcdfe6;
+    color: #606266;
+    -webkit-appearance: none;
+    text-align: center;
+    box-sizing: border-box;
+    outline: 0;
+    transition: .1s;
+    font-weight: 500;
+    border-radius: 4px;
+}
+#send-sms{
+    float:left;
+    height:42px;
+    width:118px;
+    margin-left:11px;
+    white-space: nowrap;
+    cursor: pointer;
+    -webkit-appearance: none;
+    text-align: center;
+    box-sizing: border-box;
+    outline: 0;
+    transition: .1s;
+    font-weight: 500;
+    border-radius: 15px;
+    background-color: white;
+    color: black;
+    line-height:42px;
+}
+.el-button-send {
+    padding: 8px;
+    font-size: 14px;
+    height: 40px;
+    color: #fff;
+    background-color: #409eff;
+    border-color: #409eff;
+    margin-left: 11px;
+}
+.el-button-login {
+    padding: 6px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+    height: 47px;
+    width:100%;
+    color: #000;
+    background-color: #fff;
+    border:none;
+    border-radius: 15px;
+}
+.help-mark{
+    height: 22px;
+    width: 22px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 7px;
+    text-align: center;
+}
+.captcha--input{
+    width:150px;
+}
+
+.layer-form-title{
+    width: 100%;
+    height: 40px;
+    text-align: left;
+    background: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    padding-left: 20px;
+    line-height: 40px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.second-login-layer{
+    width: 400px;
+    height: 200px;
+    background: #fff;
+    font-size: 14px;
+    padding: 20px;
+}
+
+
+@media only screen and (max-width: 1367px) {
+    .container{
+        margin-top: 40px;
+    }
+}
+@media only screen and (max-width: 769px){
+    body{
+        background: url("../images/hbu03.jpg");
+        background-attachment: fixed;
+        font-size: 12px;
+        height:auto;
+    }
+    .background{
+        display:none;
+    }
+    .header{
+        padding-top: 50px;
+        height: 100%;
+        text-align: center;
+        display:block;
+    }
+    .portal-blank-logo{
+        display:none;
+    }
+    .portal-logo{
+        height: 33px;
+    }
+    .portal-logo::after{
+        width:0;
+        margin-left:0;
+    }
+    .portal-title{
+        margin-left:auto;
+        margin-right:auto;
+        font-size: 25px;
+        color: #ffffff;
+    }
+    .notice-panel{
+        display:none;
+    }
+    .mobile-notice-panel{
+        display:block;
+    }
+
+    .container{
+        margin-top: 33px;
+        margin-left:0;
+        margin-right:0;
+        height:auto;
+        width:100%;
+        max-height: none;
+    }
+    .login-box{
+        padding-top: 23px;
+    }
+
+    .el-form-item {
+        width:auto;
+    }
+
+    .el-input{
+    }
+    #send-sms{
+        width: 78px;
+    }
+
+
+
+    .login-panel {
+        width: 500px;
+        margin-bottom: 10px;
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .notice-title{
+        margin-top:11px;
+        font-size: 20px;
+    }
+    .notice-box{
+        padding-top:10px;
+        padding-bottom: 20px;
+        padding-left:0;
+        padding-right:0;
+    }
+
+    .notice-content{
+        font-size: 12px;
+        line-height:24px;
+        margin:12px 5px;
+        width:auto;
+    }
+    .el-button-login {
+        width:95%;
+    }
+    .oauth-field {
+        width:95%;
+    }
+    .footer{
+        position:relative;
+        padding: 7px 0 9px;
+        width: 100%;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 14px;
+        color: white;
+    }
+
+}
+
+
+@media only screen and (max-width: 416px){
+
+    .login-panel {
+        width: 90%;
+        margin-bottom: 10px;
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+}
+
+.none{ display:none;}
+.area{ margin-top:15px;}
+.area span{ display:inline-block; width:100px; text-align:right; font-size:14px; color:#666; line-height:30px;}
+.area span i{ color:#f3478c;}
+.area em{ font-size:14px; color:#d80000;}
+.area ul{ display:inline-block; margin-left:-4px;}
+.area ul li{ margin-right:10px; display:inline-block;}
+
+/*地区 选择 下拉*/
+.return_reques{ position:relative;}
+.return_reques input{width:150px;height:30px;text-indent:0.5rem;  background-color:#fff; border:1px solid #ccc; vertical-align:middle; line-height:30px;}
+.return_reques .local{ background:url(images/bot_imgs.png) no-repeat;background-position:99% center;}
+.return_reques .local2{  background:url(images/bot_imgs.png) no-repeat;background-position:99% center;}
+.return_reques .bomb_con_style{ background-color:#fff; position:absolute;left:0px;z-index:999999; cursor:pointer;f3478c; border:1px solid #ccc; height:130px; overflow:auto;}
+.return_reques .bomb_con_style dd{background-color:#fff;height:28px;line-height:28px;color:#f3478c;font-size:12px;  color:#666; text-indent:0.5em;}
+.return_reques .bomb_con_style dd:hover{ background-color:#f3478c; color:#fff;}
+
+.return_reque{ position:relative;}
+.return_reque input{width:190px;height:30px;text-indent:0.5rem;  background-color:#fff; border:1px solid #ccc;vertical-align:middle; line-height:30px;}
+.return_reque .local{ background:url(images/bot_imgs.png) no-repeat;background-position:99% center;}
+.return_reque .local2{  background:url(images/bot_imgs.png) no-repeat;background-position:99% center;}
+.return_reque .bomb_con_style{ background-color:#fff; position:absolute;left:0px;z-index:999999; cursor:pointer;f3478c; border:1px solid #ccc; height:130px; overflow:auto;}
+.return_reque .bomb_con_style dd{background-color:#fff;height:28px;line-height:28px;color:#f3478c;font-size:12px;  color:#666; text-indent:0.5em;}
+.return_reque .bomb_con_style dd:hover{ background-color:#f3478c; color:#fff;}
+
+.return_requ{ position:relative;}
+.return_requ input{width:220px;height:30px;text-indent:0.5rem;  background-color:#fff; border:1px solid #ccc; vertical-align:middle; line-height:30px;}
+.return_requ .local{ background:url(images/bot_imgs.png) no-repeat;background-position:99% center;}
+.return_requ .local2{  background:url(images/bot_imgs.png) no-repeat;background-position:99% center;}
+.return_requ .bomb_con_style{ background-color:#fff; position:absolute;left:0px;z-index:999999; cursor:pointer;f3478c; border:1px solid #ccc; height:130px; overflow:auto;}
+.return_requ .bomb_con_style dd{background-color:#fff;height:28px;line-height:28px;color:#f3478c;font-size:12px;  color:#666; text-indent:0.5em;}
+.return_requ .bomb_con_style dd:hover{ background-color:#f3478c; color:#fff;}
+/*地区 选择 下拉 结束*/

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="ThemeBucket">
+  <link rel="shortcut icon" href="#" type="image/png">
+
+  <title>待二次审核会议室预约请求(后置)</title>
+
+  <!--data table-->
+  <link rel="stylesheet" href="js/data-tables/DT_bootstrap.css" />
+
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/style-responsive.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="js/html5shiv.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body class="sticky-header">
+
+<section>
+    <!-- left side start-->
+    <div class="left-side sticky-left-side">
+
+        <!--logo and iconic logo start-->
+        <div class="logo">
+         <center >
+            <br>
+            <br>
+            <br>
+            <h1 style="color: white">高</h1>
+            <br>
+            <h1 style="color: white">校</h1>
+            <br>
+            <h2 style="color: white">MRBS</h2>
+        </center>>
+        </div>
+
+        <div class="logo-icon text-center">
+           
+      </div>
+        <!--logo and iconic logo end-->
+
+
+       
+    </div>
+    <!-- left side end-->
+    
+    <!-- main content start-->
+    <div class="main-content" >
+
+      
+
+        <!-- page heading start-->
+        <div class="page-heading">
+            <h3>
+                二次审核：待审核会议室预约请求
+            </h3>
+           
+        </div>
+        <!-- page heading end-->
+
+        <!--body wrapper start-->
+        <div class="wrapper">
+             <div class="row">
+                <div class="col-sm-12">
+                <section class="panel">
+                <div class="panel-body">
+                <div class="adv-table editable-table ">
+                <div class="clearfix">
+                    
+                    
+                </div>
+                <div class="space15"></div>
+                <table class="table table-striped table-hover table-bordered" id="editable-sample">
+                <thead>
+                	<tr>                   
+	                    <th style="width:8%">预约者姓名</th>
+	                    <th style="width:10%">预约者学院</th>
+	                    <th style="width:10%"> 会议室名称</th>
+	                    <th style="width:10%">会议室系别</th>
+	                    <th style="width:10%">会议时间</th>
+	                    <th style="width:15%">会议主题</th>
+	                    <th style="width:4%">参会人数</th>
+	                    <th style="width:8%">备注</th>
+	                    <th style="width:4%">审核通过</th>
+	                    <th style="width:12%">理由（若审核不通过）</th>
+	                    <th style="width:4%">审核不通过</th>
+	                </tr>
+                </thead>
+                <tbody id="content">
+	                <!-- <tr class="">
+	                    <td>张三</td>
+	                    <td>会计</td>
+	                    <td>六教231</td>
+	                    <td>管理科学与工程</td>
+	                    <td>3/25/12.00-3/25/13.00</td>
+	                    <td>无</td>
+	                    <td>12人</td>
+	                    <td>无</td>
+	                    <td><button class="btn btn-post pull-center">通过</button></td>
+	                    <td><input type="text"></td>
+	                    <td><button class="btn btn-post pull-center">不通过</button></td>
+	               
+	                </tr> -->
+                
+                </tbody>
+                </table>
+                </div>
+                </div>
+                </section>
+                </div>
+                </div>
+        </div>
+
+        <!--body wrapper end-->
+
+        <!--footer section start-->
+        <footer class="sticky-footer"> &copy; 管理学院会议室预约系统 by <a href="https://armycodes.com/" target=_blank>Copyright &copy; 从戎源码网 from 2023. </a></footer>
+        <!--footer section end-->
+
+
+
+        
+
+        
+
+    </div>
+    <!-- main content end-->
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="js/script/jquery-1.10.2.min.js"></script>
+<script src="js/script/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="js/script/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/script/bootstrap.min.js"></script>
+<script src="js/script/modernizr.min.js"></script>
+<script src="js/script/jquery.nicescroll.js"></script>
+
+<!-- lst -->
+<script type="text/javascript" src="js/utilcommon.js"></script>
+<script>
+//显示  lst
+function viewdata(data){
+	var html = '';
+	for(var i = 0; i <data.length; i++){
+		if(data[i].department != data[i].roomType){
+			html +='<tr class="odd">';
+			html +='<td >'+data[i].username+'</td>';		
+			html +='<td >'+data[i].department+'</td>';
+			html +='<td >'+data[i].roomName+'</td>';
+			html +='<td >'+data[i].roomType+'</td>';
+			html +='<td> <p>'+data[i].date+'</p> <p>'+data[i].time+'</p></td>';//'+data[i].date + data[i].time+'
+			html +='<td >'+data[i].theme +'</td>';
+			html +='<td >'+data[i].maxNum+'</td>';
+			if( data[i].specialneeds == null){
+				html +='<td >无</td>';
+			}else{
+				html +='<td >'+data[i].specialneeds+'</td>';
+			}
+		
+			html +='<td><button class="btn btn-post pull-center">通过</button></td>';			
+			html +='<td><input type="text"></td>';
+			html +='<td><button class="btn btn-post pull-center">不通过</button></td>';
+			html +='</tr> ';
+		}
+	}
+	$("#content").html(html);	
+}
+//显示数据的ajax
+function getdata(){
+	var url=Config.host+"/back/waitPassShow2";
+	//var url = "http://localhost:8080/ConferenceRoom/back/roomShow";
+	var data={};
+	var func=function(returndata){
+		/*if(returndata.code!="000000"){
+			layer.alert('请登录', {
+				skin: 'layui-layer-lan' //样式类名
+			},function(){
+				location.href="http://localhost:8080/hedaluntan/htmls/topic/login.html";
+			});
+		}	else{
+			viewdata(returndata.data);
+		}*/
+		viewdata(returndata.data);
+	}
+	AJAX.get(url,data,func);//正常应该是get2
+}
+getdata();
+</script>
+
+<!--data table-->
+<script type="text/javascript" src="js/data-tables/jquery.dataTables.js"></script>
+<script type="text/javascript" src="js/data-tables/DT_bootstrap.js"></script>
+
+<!--common scripts for all pages-->
+<script src="js/scripts.js"></script>
+
+<!--script for editable table-->
+<script src="js/editable-table-checkwaiting.js"></script>
+
+<!-- END JAVASCRIPTS -->
+<script>
+    jQuery(document).ready(function() {
+        EditableTable.init();
+    });
+</script>
+
+</body>
+</html>

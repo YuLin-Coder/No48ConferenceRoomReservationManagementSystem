@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="ThemeBucket">
+  <link rel="shortcut icon" href="#" type="image/png">
+
+  <title>公告发布</title>
+
+  <link rel="stylesheet" type="text/css" href="js/bootstrap-wysihtml5/bootstrap-wysihtml5.css" />
+  <script type="text/javascript" charset="gbk" src="js/utf8-jsp/ueditor.config.js"></script>
+  <script type="text/javascript" charset="gbk" src="js/utf8-jsp/ueditor.all.js"> </script>
+
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/style-responsive.css" rel="stylesheet">
+
+  
+  
+</head>
+
+<body class="sticky-header">
+
+<section>
+    <!-- left side start-->
+    <div class="left-side sticky-left-side">
+
+        <!--logo and iconic logo start-->
+        <div class="logo">
+         
+            <h3 style="color: white">&nbsp; &nbsp;管理学院MRBS</h3>
+        </div>
+
+        <div class="logo-icon text-center">
+           
+      </div>
+        <!--logo and iconic logo end-->
+
+
+        <div class="left-side-inner">
+
+            
+
+            <!--sidebar nav start-->
+            <ul class="nav nav-pills nav-stacked custom-nav">
+				<br>
+                <li><a href="index.html"><i class="fa fa-home"></i> <span>会议室审核</span></a></li>
+                <li><a href="newusers.html"><i class="fa fa-tasks"></i> <span>新用户审核</span></a></li>
+                <li><a href="room.html"><i class="fa fa-building-o"></i> <span>会议室管理</span></a></li>
+                <li><a href="users.html"><i class="fa fa-users"></i> <span>用户管理</span></a></li>
+                <li><a href="publish.html"><i class="fa fa-comment-o"></i> <span>信息发布</span></a></li>
+                <li><a href="message.html"><i class="fa fa-archive"></i> <span>公告管理</span></a></li>
+                <li><a href="book_list.html"><i class="fa fa-bullhorn"></i> <span>预约情况</span></a> </li> 
+                
+            </ul>
+            <!--sidebar nav end-->
+
+        </div>
+    </div>
+    <!-- left side end-->
+    
+    <!-- main content start-->
+    <div class="main-content" >
+
+        <!-- header section start-->
+        <div class="header-section">
+
+        <!--toggle button start-->
+        <a class="toggle-btn"><i class="fa fa-bars"></i></a>
+        <!--toggle button end-->
+
+        
+
+        <!--notification menu start -->
+        <div class="menu-right">
+            <ul class="notification-menu">
+                    
+                <li>
+                    <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                        <i class="fa fa-user"></i>
+                        管理员
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
+                        
+                        <li><a onclick="backQuit()"><i class="fa fa-sign-out"></i>注销</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+        <!--notification menu end -->
+        </div>
+        <!-- header section end-->
+
+        <!-- page heading start-->
+        <div class="page-heading">
+            <h3>
+                我须留意
+            </h3>
+           
+        </div>
+        <!-- page heading end-->
+
+        <!--body wrapper start-->
+        <div class="wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <section class="panel">
+                        <header class="panel-heading">
+                            <label for="exampleInputEmail1">标题</label>
+                            <input type="text" class="form-control" id="title">
+                            <label style="margin-top:20px" for="exampleInputPassword1">作者</label>
+                            <input type="text" class="form-control" id="author">
+                       		<label style="margin-top:20px" for="name">消息内容</label>
+							<!-- <textarea id="content" style="height:280px" class="form-control" rows="3"></textarea> -->
+                            <!--lst-->
+                            <script id="editor" class="contents" type="text/plain"></script>
+						 </header>
+                        <!-- <div class="panel-body">
+                            <label for="exampleInputEmail1">主要内容</label>
+                            <div class="form">
+                                <form action="#" class="form-horizontal">
+                                    <div class="form-group">
+                                        <div class="col-sm-12">
+                                            <textarea class="form-control ckeditor" name="editor1" rows="6"></textarea>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div> -->
+                    </section>
+                    <!-- <div>
+                    
+                        <script id="editor" type="text/plain"></script>
+                        
+                    </div> -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="panel">
+                               
+                                <footer class="panel-footer">
+                                    <button  id="pub" class="btn btn-post pull-right">发布</button>
+                                    <ul class="nav nav-pills p-option">
+                                        <li>
+                                            <a href="#"><i class=""></i></a>
+                                        </li>
+                                       
+                                    </ul>
+                                </footer>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </div>
+        <!--body wrapper end-->
+
+
+
+          <!--footer section start-->
+          <footer class="sticky-footer"> &copy; 管理学院会议室预约系统 by <a href="https://armycodes.com/" target=_blank>Copyright &copy; 从戎源码网 from 2023. </a></footer>
+          <!--footer section end-->
+  
+
+    </div>
+    <!-- main content end-->
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster -->
+<script src="js/script/jquery-1.10.2.min.js"></script>
+<script src="js/script/jquery-ui-1.9.2.custom.min.js"></script>
+<script src="js/script/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/script/bootstrap.min.js"></script>
+<script src="js/script/modernizr.min.js"></script>
+<script src="js/script/jquery.nicescroll.js"></script>
+
+<!-- lst -->
+<script type="text/javascript" src="js/utilcommon.js"></script>
+<script src="js/layer-v3.1.1/layer/layer.js" ></script>
+<script src="js/back/publish.js"></script>
+
+
+
+<script type="text/javascript" src="js/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="js/bootstrap-wysihtml5/wysihtml5-0.3.0.js"></script>
+<script type="text/javascript" src="js/bootstrap-wysihtml5/bootstrap-wysihtml5.js"></script>
+
+
+<!--common scripts for all pages-->
+<script src="js/scripts.js"></script>
+
+</body>
+</html>

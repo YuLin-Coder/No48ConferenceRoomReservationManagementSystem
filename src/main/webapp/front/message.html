@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="ThemeBucket">
+<link rel="shortcut icon" href="#" type="image/png">
+<link rel="stylesheet" href="js/layui-v2.5.6/layui/css/layui.css"  media="all">
+<title>公告通知</title>
+
+<!--data table-->
+<link rel="stylesheet" href="js/data-tables/DT_bootstrap.css" />
+<link href="css/style.css" rel="stylesheet">
+<link href="css/style-responsive.css" rel="stylesheet">
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --> 
+<!--[if lt IE 9]>
+  <script src="js/html5shiv.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+
+    <style>
+        .list-group-item:hover{
+            background-color:#8cccec;
+        }
+    </style>
+</head>
+
+<body class="sticky-header">
+<section> 
+  <!-- left side start-->
+  <div class="left-side sticky-left-side"> 
+    
+   <!--logo and iconic logo start-->
+        <div class="logo">
+         
+            <h3 style="color: white">&nbsp; &nbsp;管理学院MRBS</h3>
+        </div>
+
+        <div class="logo-icon text-center">
+           
+      </div>
+        <!--logo and iconic logo end-->
+    
+    <div class="left-side-inner"> 
+      
+		
+      <!--sidebar nav start-->
+      
+      <ul class="nav nav-pills nav-stacked custom-nav">
+        <br>
+        <li><a href="index.html"><i class="fa fa-home"></i> <span>首页</span></a></li>
+        <li><a href="message.html"><i class="fa fa-archive"></i> <span>我须留意</span></a></li>
+        <li><a href="search.html"><i class="fa fa-cogs"></i> <span>会议室查询</span></a> </li>
+        <!-- <li><a href="book.html"><i class="fa fa-file-text"></i> <span>我要预约</span></a> </li> -->
+        <li class="menu-list"><a href="book.html"><i class="fa fa-file-text"></i> <span>我要预约</span></a>
+          <ul class="sub-menu-list">
+              <li><a href="book.html">本系预约</a></li>
+              <li><a href="book2.html">跨系预约</a></li>
+          </ul>
+        </li>
+        <li><a href="conferenceall.html"><i class="fa fa-bullhorn"></i> <span>预约情况</span></a> </li>   
+        <li><a href="book_list.html"><i class="fa fa-bullhorn"></i> <span>我的预约</span></a> </li>     
+        <!-- <li><a href="book_list2.html"><i class="fa fa-align-justify"></i> <span>我的会议</span></a> </li> -->
+        <!-- <li><a href="current.html"><i class="fa fa-map-marker"></i> <span>当前会议</span></a> </li> -->
+    </ul>
+    <!--sidebar nav end--> 
+      
+    </div>
+  </div>
+  <!-- left side end--> 
+  
+  <!-- main content start-->
+  <div class="main-content" > 
+    
+    <!-- header section start-->
+    <div class="header-section"> 
+      
+      <!--toggle button start--> 
+      <a class="toggle-btn"><i class="fa fa-bars"></i></a> 
+      <!--toggle button end--> 
+      
+      <!--notification menu start -->
+      <div class="menu-right">
+      <ul class="notification-menu">
+      
+        <li> <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> <img src="images/user.png" alt="" /> 用户中心 <span class="caret"></span> </a>
+          <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
+            <!-- <li><a data-toggle="modal" href="##myModal1"><i class="fa fa-cog"></i>设置</a> </li> -->
+            <li><a onclick="frontQuit()"><i class="fa fa-sign-out"></i>退出登录</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+      <!--notification menu end --> 
+      
+    </div>
+    <!-- header section end--> 
+
+    <!--body wrapper start-->
+    <div class="wrapper">
+      <h3> 我须留意 </h3>
+      <section class="mail-box-info">
+        <header class="header"> </header>
+        <section class="mail-list">
+          <ul class="list-group " id="list"></ul>
+        </section>
+		</section>
+     </div>
+ <!--  分页 -->
+ <div id="demo1" style="position:fixed; bottom:50px;right:20px"></div>
+
+       <!--footer section start-->
+       <footer class="sticky-footer"> <a href="https://armycodes.com/" target=_blank>Copyright &copy; 从戎源码网 from 2023.</a> </footer>
+       <!--footer section end-->
+
+<!-- main content end-->
+  </div>
+
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster --> 
+<script src="js/script/jquery-1.10.2.min.js"></script> 
+<script src="js/script/jquery-ui-1.9.2.custom.min.js"></script> 
+<script src="js/script/jquery-migrate-1.2.1.min.js"></script> 
+<script src="js/script/bootstrap.min.js"></script> 
+<script src="js/script/modernizr.min.js"></script> 
+<script src="js/script/jquery.nicescroll.js"></script> 
+
+
+<!-- lst -->
+<script type="text/javascript" src="js/utilcommon.js"></script>
+<script src="js/layui-v2.5.6/layui/layui.js" charset="utf-8"></script>
+<script src="js/front/message.js"></script>
+
+<!--common scripts for all pages-->
+<script src="js/scripts.js"></script>
+</body>
+</html>

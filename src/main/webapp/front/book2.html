@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="ThemeBucket">
+<link rel="shortcut icon" href="#" type="image/png">
+<title>跨系预约</title>
+
+<!--ios7-->
+<link rel="stylesheet" type="text/css" href="js/ios-switch/switchery.css" />
+
+<!--icheck-->
+<link href="js/iCheck/skins/minimal/minimal.css" rel="stylesheet">
+<link href="js/iCheck/skins/minimal/red.css" rel="stylesheet">
+<link href="js/iCheck/skins/minimal/green.css" rel="stylesheet">
+<link href="js/iCheck/skins/minimal/blue.css" rel="stylesheet">
+<link href="js/iCheck/skins/minimal/yellow.css" rel="stylesheet">
+<link href="js/iCheck/skins/minimal/purple.css" rel="stylesheet">
+<link href="js/iCheck/skins/square/square.css" rel="stylesheet">
+<link href="js/iCheck/skins/square/red.css" rel="stylesheet">
+<link href="js/iCheck/skins/square/green.css" rel="stylesheet">
+<link href="js/iCheck/skins/square/blue.css" rel="stylesheet">
+<link href="js/iCheck/skins/square/yellow.css" rel="stylesheet">
+<link href="js/iCheck/skins/square/purple.css" rel="stylesheet">
+<link href="js/iCheck/skins/flat/grey.css" rel="stylesheet">
+<link href="js/iCheck/skins/flat/red.css" rel="stylesheet">
+<link href="js/iCheck/skins/flat/green.css" rel="stylesheet">
+<link href="js/iCheck/skins/flat/blue.css" rel="stylesheet">
+<link href="js/iCheck/skins/flat/yellow.css" rel="stylesheet">
+<link href="js/iCheck/skins/flat/purple.css" rel="stylesheet">
+
+<!--multi-select-->
+<link rel="stylesheet" type="text/css" href="js/jquery-multi-select/css/multi-select.css" />
+
+<!--file upload-->
+<link rel="stylesheet" type="text/css" href="css/bootstrap-fileupload.min.css" />
+
+<!--tags input-->
+<link rel="stylesheet" type="text/css" href="js/jquery-tags-input/jquery.tagsinput.css" />
+<link href="css/style.css" rel="stylesheet">
+<link href="css/style-responsive.css" rel="stylesheet">
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries --> 
+<!--[if lt IE 9]>
+  <script src="js/html5shiv.js"></script>
+  <script src="js/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+<body class="sticky-header">
+<section> 
+  <!-- left side start-->
+  <div class="left-side sticky-left-side"> 
+    
+    <!--logo and iconic logo start-->
+         <div class="logo">
+          
+             <h3 style="color: white">&nbsp; &nbsp;管理学院MRBS</h3>
+         </div>
+ 
+         <div class="logo-icon text-center">
+            
+       </div>
+         <!--logo and iconic logo end-->
+     
+     <div class="left-side-inner"> 
+       
+       <!-- visible to small devices only --> 
+       
+       <!--sidebar nav start-->
+       
+       <ul class="nav nav-pills nav-stacked custom-nav">
+         <br>
+         <li><a href="index.html"><i class="fa fa-home"></i> <span>首页</span></a></li>
+         <li><a href="message.html"><i class="fa fa-archive"></i> <span>我须留意</span></a></li>
+         <li><a href="search.html"><i class="fa fa-cogs"></i> <span>会议室查询</span></a> </li>
+         <!-- <li><a href="book.html"><i class="fa fa-file-text"></i> <span>我要预约</span></a> </li> -->
+         <li class="menu-list"><a href="book.html"><i class="fa fa-file-text"></i> <span>我要预约</span></a>
+           <ul class="sub-menu-list">
+               <li><a href="book.html">本系预约</a></li>
+               <li><a href="book2.html">跨系预约</a></li>
+           </ul>
+         </li>
+         <li><a href="conferenceall.html"><i class="fa fa-bullhorn"></i> <span>预约情况</span></a> </li>   
+         <li><a href="book_list.html"><i class="fa fa-bullhorn"></i> <span>我的预约</span></a> </li>      
+         <!-- <li><a href="book_list2.html"><i class="fa fa-align-justify"></i> <span>我的会议</span></a> </li> -->
+         <!-- <li><a href="current.html"><i class="fa fa-map-marker"></i> <span>当前会议</span></a> </li> -->
+     </ul>
+       <!--sidebar nav end--> 
+       
+     </div>
+   </div>
+  <!-- left side end--> 
+  
+  <!-- main content start-->
+  <div class="main-content" > 
+    
+    <!-- header section start-->
+    <div class="header-section"> 
+      
+      <!--toggle button start--> 
+      <a class="toggle-btn"><i class="fa fa-bars"></i></a> 
+      <!--toggle button end--> 
+      
+      <!--search start-->
+      
+      <!--search end--> 
+      
+      <!--notification menu start -->
+      <div class="menu-right">
+      <ul class="notification-menu">
+      
+        <li> <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> <img src="images/user.png" alt="" /> 用户中心 <span class="caret"></span> </a>
+          <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
+            <!-- <li><a data-toggle="modal" href="##myModal1"><i class="fa fa-cog"></i>设置</a> </li> -->
+            <li><a onclick="frontQuit()"><i class="fa fa-sign-out"></i>退出登录</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+      <!--notification menu end --> 
+      
+    </div>
+	  
+	  
+	  
+<!-- <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal1" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title">用户设置</h4>
+        </div>
+        <div class="modal-body">
+			
+          <form role="form">
+			 <div class="form-group">
+              <p><label for="exampleInputEmail1">账号</label></p>
+              <input type="text" class="form-control" id="exampleInputEmail1">
+            </div> 
+			  <div class="form-group">
+              <label for="exampleInputPassword1">密码</label>
+              <input type="password" class="form-control" id="exampleInputPassword2">
+            </div>
+            <div class="form-group">
+              <p><label for="exampleInputEmail1">邮箱</label></p>
+              <input type="email" class="form-control" id="exampleInputEmail3">
+            </div>
+			     <div class="form-group">
+              <p><label for="exampleInputEmail1">系别</label></p>
+              <input type="text" class="form-control" id="exampleInputEmail4">
+            </div>
+          </form>
+			
+			
+        </div>
+        <div class="modal-footer">
+          <button data-dismiss="modal" class="btn btn-default" type="button">取消</button>
+          <button class="btn btn-primary" type="button">修改</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+    <!-- header section end--> 
+    
+    <!-- page heading start-->
+    <div class="page-heading">
+      <h3> 跨系会议室预约 </h3>
+      <div class="state-info">
+<iframe name="weather_inc" src="http://i.tianqi.com/index.php?c=code&id=2&num=1" width="220" height="70" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>					</div>
+    </div>
+    <!-- page heading end--> 
+    
+    <!--body wrapper start-->
+    <div class="wrapper">
+      <div class="row">
+        <div class="col-md-12">
+          <section class="panel">
+            <header class="panel-heading"> 预约信息 <span class="tools pull-right"> 
+				
+				</span> 
+			  </header>
+            <div class="panel-body">
+              <form action="#" class="form-horizontal ">
+	              <div class="form-group">
+                  <label class="control-label col-md-3">使用原因</label>
+                  <div class="col-md-6 col-sm-6">
+                    <input  id="theme" class="form-control" name="subject" type="text"/>
+                  </div>
+                </div>
+							  
+                <div class="form-group">
+					 <label class="control-label col-md-3">使用日期</label>
+					<div class="col-md-3 col-sm-6">
+             <input class="form-control" id="test2" type="text"/>
+             <span id="null1" style="font-size: 12px;">***必填</span>
+                  <script src="js/laydate/laydate.js"></script> 
+                <script>
+//执行一个laydate实例
+					  	laydate.render({
+  						elem: '#test2' //指定元素
+					});
+				</script> 
+						</div>
+                </div>		  
+                <div class="form-group">
+                  <label class="control-label col-md-3">使用时间段</label>
+                  <div class="timee"><!--  style="position: relative;" -->
+                    <div class="col-md-3 col-sm-6" style="width: 180px;">
+                      <select class="form-control m-bot15"  id="starttime">
+                        <option>请选择开始时间</option>
+                        <option>8:00</option>
+                        <option>9:00</option>
+                        <option>10:00</option>
+                        <option>11:00</option>
+                        <option>12:00</option>
+                        <option>13:00</option>
+                        <option>14:00</option>
+                        <option>15:00</option>
+                        <option>16:00</option>
+                        <option>17:00</option>
+                       
+                      </select>
+                      <span id="null2" style="font-size: 12px;">***必填</span>
+                    </div>
+                    <!-- <span >------</span> -->
+                    <div class="col-md-3 col-sm-6" style="width: 180px;">
+                      <select class="form-control m-bot15" id="endtime">
+                        <option>请选择结束时间</option>
+                        
+                        <option>9:00</option>
+                        <option>10:00</option>
+                        <option>11:00</option>
+                        <option>12:00</option>
+                        <option>13:00</option>
+                        <option>14:00</option>
+                        <option>15:00</option>
+                        <option>16:00</option>
+                        <option>17:00</option>
+                        <option>18:00</option>
+                      </select>
+                      <span id="null3" style="font-size: 12px;">***必填</span>
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label class="control-label col-md-3">会议室选择</label>
+                  <div class="col-md-3 col-sm-6">
+                    <select class="form-control m-bot15" id="room">
+                      <option>请选择会议室</option>
+                    </select>
+                    <span id="null4" style="font-size: 12px;">***必填</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-3">使用人数</label>
+                  <div class="col-md-2 col-sm-6">
+                    <input id="num" class="form-control" name="sum" type="text" placeholder="请输入数字"/>
+                  </div>
+                </div>
+                <!-- lst ，数据库预约表还没有是否需要多媒体的字段，将其存放在specialneeds -->
+               <div class="form-group">
+                  <label class="control-label col-md-3">是否需要多媒体</label>
+                  <div class="col-sm-9 icheck ">
+                    <div class="square single-row">
+                      <div class="radio ">
+                        <input tabindex="3" type="radio"  value="不需要"name="demo-radio">
+                        <span>不需要 （默认）</span>
+                      </div>
+                    </div>
+                    <div class="square-red single-row">
+                      <div class="radio ">
+                        <input tabindex="3" type="radio"value="需要"  name="demo-radio" >
+                        <span>需要</span>
+                      </div>
+                    </div>
+                  </div>
+                </div> 
+               
+                <div class="form-group">
+                  <label class="control-label col-md-3">附注</label>
+                  <div class="col-md-6 col-sm-6">
+                    <textarea  id="specialneeds" rows="6" class="form-control"></textarea>
+                  </div>
+                </div>          
+                <div class="col-lg-10 mt-5">
+                  <div class="card">
+                    <div class="card-body">
+                      <center>
+                        <button id="othersAppointment" type="button" style="width:100px" class="btn btn-rounded btn-primary mb-5" data-toggle="modal" href="#myModal">预约</button>
+                      </center>
+                    </div>
+                  </div>
+                </div>
+                <!-- <div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" id="myModal" class="modal fade">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">管理学院会议室预约系统</h4>
+                      </div>
+                      <div class="modal-body">
+                        <h4>预约成功，请按照有关规定使用会议室，祝您使用愉快！</h4>
+                      </div>
+                      <div class="modal-footer">
+                        <button data-dismiss="modal" class="btn btn-primary" type="button">确定</button>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+              </form>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <!--body wrapper end--> 
+    
+    <!--footer section start-->
+    <footer class="sticky-footer"> <a href="https://armycodes.com/" target=_blank>Copyright &copy; 从戎源码网 from 2023.</a> </footer>
+    <!--footer section end-->
+    
+  </div>
+  <!-- main content end--> 
+</section>
+
+<!-- Placed js at the end of the document so the pages load faster --> 
+<script src="js/script/jquery-1.10.2.min.js"></script> 
+<script src="js/script/jquery-ui-1.9.2.custom.min.js"></script> 
+<script src="js/script/jquery-migrate-1.2.1.min.js"></script> 
+<script src="js/script/bootstrap.min.js"></script> 
+<script src="js/script/modernizr.min.js"></script> 
+<script src="js/script/jquery.nicescroll.js"></script> 
+
+
+<!-- lst -->
+<script type="text/javascript" src="js/utilcommon.js"></script>
+<script src="js/layer-v3.1.1/layer/layer.js" ></script>
+<script src="js/front/timejudge.js"></script>
+<script src="js/front/book2.js"></script>
+
+
+
+<!--ios7--> 
+<script src="js/ios-switch/switchery.js" ></script> 
+<script src="js/ios-switch/ios-init.js" ></script> 
+
+<!--icheck --> 
+<script src="js/iCheck/jquery.icheck.js"></script> 
+<script src="js/icheck-init.js"></script> 
+<!--multi-select--> 
+<script type="text/javascript" src="js/jquery-multi-select/js/jquery.multi-select.js"></script> 
+<script type="text/javascript" src="js/jquery-multi-select/js/jquery.quicksearch.js"></script> 
+<script src="js/multi-select-init.js"></script> 
+<!--spinner--> 
+<script type="text/javascript" src="js/fuelux/js/spinner.min.js"></script> 
+<script src="js/spinner-init.js"></script> 
+<!--file upload--> 
+<script type="text/javascript" src="js/bootstrap-fileupload.min.js"></script> 
+<!--tags input--> 
+<script src="js/jquery-tags-input/jquery.tagsinput.js"></script> 
+<script src="js/tagsinput-init.js"></script> 
+<!--bootstrap input mask--> 
+<script type="text/javascript" src="js/bootstrap-inputmask/bootstrap-inputmask.min.js"></script>
+
+
+<!--common scripts for all pages-->
+<script src="js/scripts.js"></script>
+</body>
+</html>
