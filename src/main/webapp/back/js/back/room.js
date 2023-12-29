@@ -79,7 +79,7 @@ function deldata(data){
 
 //编辑.
 function edit(id){
-  if($("#"+id).children().eq(7).children().text()=='修改'){
+  if($("#"+id).children().eq(6).children().text()=='修改'){
 	  for(i=0;i<9;i++){
 		  $("#"+id).children().eq(i).attr("style","background-color: rgb(154, 215, 225);opacity:0.6;color:#000");
 	  }
@@ -89,11 +89,11 @@ function edit(id){
       $("#"+id).children().eq(1).html("");   
       $("#"+id).children().eq(2).attr("contenteditable","true");
       $("#"+id).children().eq(3).attr("contenteditable","true");
-      // $("#"+id).children().eq(4).attr("contenteditable","true");      
+      $("#"+id).children().eq(4).attr("contenteditable","true");
       $("#"+id).children().eq(5).attr("contenteditable","true");
       $("#"+id).children().eq(5).html("");
-      $("#"+id).children().eq(6).attr("contenteditable","true");
-      $("#"+id).children().eq(7).children().text("保存");
+      // $("#"+id).children().eq(6).attr("contenteditable","true");
+      $("#"+id).children().eq(6).children().text("保存");
 
       var html='';
 	  html +='<select name="roomtype'+id+'"><option>信息管理工程系</option><option>财政学系</option>';
@@ -103,7 +103,7 @@ function edit(id){
 	  html2 +='<select name="status'+id+'"><option>可使用</option><option>维修中</option></select>';
 	  $("#"+id).children().eq(5).append(html2);
   
-  }else if(($("#"+id).children().eq(7).children().text()=='保存')){
+  }else if(($("#"+id).children().eq(6).children().text()=='保存')){
 	  //编辑的保存
          update(id);
   }
@@ -190,8 +190,9 @@ $("#r4").on("input",function(){
 function save(){
 	// var roomTypeid = $(this).parent().siblings().eq(1).attr("id");
 	// console.log($(this));
-	var roomType= $("#roomty>select option:selected").val();
-    var status=$("#status>select option:selected").val();
+	var roomType= $("#roomty>option:selected").val();
+    var status=$("#status>option:selected").val();
+	var sta;
     if(status =="可使用"){
     	sta = 1
     }else if(status =="维修中"){
@@ -217,6 +218,7 @@ function save(){
     		"address" : $("#r2").text(),
     		"capacity" : $("#r4").text(),
     		"status" : sta,
+    		"time" : "",
     		"equipment" : $("#r6").text()
     	}
         var func=function(returndata){

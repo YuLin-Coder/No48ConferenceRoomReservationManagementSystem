@@ -40,7 +40,7 @@ import redis.clients.jedis.Jedis;
 //     }  
 // 
 	//Redis服务器IP
-	    private static String ADDR = "";
+	    private static String ADDR = "localhost";
 	    //Redis的端口号
 	    private static Integer PORT = 6379;
 	    //访问密码  有就写，无就空
@@ -76,7 +76,7 @@ import redis.clients.jedis.Jedis;
 	            config.setMaxIdle(MAX_IDLE);
 	            config.setMaxWaitMillis(MAX_WAIT_MILLIS);
 	            config.setTestOnBorrow(TEST_ON_BORROW);
-	            pool = new JedisPool(config,ADDR,PORT,TIMEOUT,AUTH);
+	            pool = new JedisPool(config,ADDR,PORT,TIMEOUT,null);
 	        } catch (Exception e) {
 	            e.printStackTrace();
 	        }

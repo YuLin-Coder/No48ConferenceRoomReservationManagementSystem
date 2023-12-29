@@ -108,18 +108,18 @@ function deldata(data){
 
 //编辑.++++++
 function edit(id){
-	if($("#"+id).children().eq(6).children().text()=='修改'){
+	if($("#"+id).children().eq(5).children().text()=='修改'){
 	    for(i=0;i<8;i++){
 	      $("#"+id).children().eq(i).attr("style","background-color: rgb(154, 215, 225);opacity:0.6;color:#000");
 	    }
-	    //   $("#"+id).children().eq(0).attr("contenteditable","true");
+	      $("#"+id).children().eq(0).attr("contenteditable","true");
 	      $("#"+id).children().eq(1).attr("contenteditable","true"); 
 	      $("#"+id).children().eq(2).attr("contenteditable","true");
 	      $("#"+id).children().eq(3).attr("contenteditable","true");
 	      $("#"+id).children().eq(3).html("");  
 	      // $("#"+id).children().eq(4).attr("contenteditable","true");      
-	      $("#"+id).children().eq(5).attr("contenteditable","true");
-	      $("#"+id).children().eq(6).children().text("保存");
+	      $("#"+id).children().eq(4).attr("contenteditable","true");
+	      $("#"+id).children().eq(5).children().text("保存");
 	      
 		var html='';
 		html +='<select name="department'+id+'"><option>信息管理工程系</option><option>财政学系</option>';
@@ -129,7 +129,7 @@ function edit(id){
 	    $("#"+id).children().eq(3).append(html);
 
 
-	  }else if(($("#"+id).children().eq(6).children().text()=='保存')){
+	  }else if(($("#"+id).children().eq(5).children().text()=='保存')){
 	         update(id);
 	  }
 }
@@ -142,7 +142,8 @@ function update(id){
     	    "name" : $("#"+id).children().eq(2).text(),
     	    "department" : department,
     	    // "phone" : $("#"+id).children().eq(4).text(),
-    	    "mailbox" :$("#"+id).children().eq(5).text(),
+    	    "phone" : "",
+    	    "mailbox" :$("#"+id).children().eq(4).text(),
     	    }
     
 	var url = Config.host+"/back/userUpdate";//"http://localhost:8080/ConferenceRoom
@@ -171,8 +172,8 @@ function add(){
 	  html +='<td class="password" id="r1" contenteditable="true"></td>';
 	  html +='<td class="name" id="r2" contenteditable="true"></td>';
 	  html +='<td class="department" id="department" name="type" contenteditable="true"><select><option>信息管理工程系</option><option>财政学系</option><option>会计系</option><option>工商管理系</option><option>旅游管理系</option><option>图书馆学系</option><option>档案学系</option></select></td>';
-	  html +='<td class="phone" id="r4" contenteditable="true"></td>';
-	  // html +='<td class= "mailbox" id="r5" contenteditable="true"></td>';
+	  // html +='<td class="phone" id="r4" contenteditable="true"></td>';
+	  html +='<td class= "mailbox" id="r5" contenteditable="true"></td>';
 	  html += ' <td ><a class="edit" onclick="save()" >保存</a></td>';
 	  html +='<td></td>';
 	  html +='</tr> ';
@@ -188,6 +189,7 @@ function save(){
 			"name" : $("#r2").text(),
 			"department" : $("#department>select option:selected").val(),
 			// "phone" : $("#r4").text(),
+			"phone" : "",
 			"mailbox" :$("#r5").text()
 		}
 		var func=function(returndata){
