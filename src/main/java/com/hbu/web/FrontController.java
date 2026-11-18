@@ -518,8 +518,13 @@ public class FrontController extends BaseController{
     private Result<String> appointDel(@RequestParam("appointId") int appointId ,HttpServletRequest request) {
         Result<String> result = new Result<String>();
         //判断是否登录
-        
-        int num = conferenceService.appointDel(appointId);
+        if(!checklogin(request)) {
+            result.setCode("999999");
+            result.setMessage("请登录");
+            return result;
+        }
+        long usernumber = Long.parseLong(getUserId(request));
+        int num = conferenceService.appointDel(appointId, usernumber);
 
         if(num != 0) {
             result.setCode("888888");

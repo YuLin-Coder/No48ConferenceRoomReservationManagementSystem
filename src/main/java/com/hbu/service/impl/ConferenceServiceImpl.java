@@ -293,12 +293,16 @@ public class ConferenceServiceImpl implements ConferenceService {
     }*/
 
     @Override
-    public int appointDel( int id){
+    public int appointDel( int id, long number){
         TConferenceRoomAppointmentExample example= new TConferenceRoomAppointmentExample();
         TConferenceRoomAppointmentExample.Criteria criteria =example.createCriteria();
         criteria.andIdEqualTo(id);
+        criteria.andNumberEqualTo(number);
         criteria.andIsdelEqualTo(true);
         List<TConferenceRoomAppointment> list =  tConferenceRoomAppointmentMapper.selectByExample(example);
+        if(list.isEmpty()){
+            return 1;
+        }
         if(list.get(0).getExamineStatus() == 1 ){
             //同时删除会议表和预约表的数据
             RefConference re = new RefConference();
