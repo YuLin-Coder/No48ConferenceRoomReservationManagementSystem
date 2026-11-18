@@ -20,7 +20,7 @@ public interface ConferenceService {
     PageInfo<OwnAppointModel> myAppointShow(long number, int page, int size);
     //List<AppointmentModel>  myConferenceShow(long number);
 
-    int appointDel( int id);
+    int appointDel( int id, long number);
 
     PageInfo<TConferenceRoomAppointment> appoints(int page, int size);
 }
